@@ -1,0 +1,12 @@
+# Generated warehouse (regenerate by running the notebook)
+warehouse/*.db
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store

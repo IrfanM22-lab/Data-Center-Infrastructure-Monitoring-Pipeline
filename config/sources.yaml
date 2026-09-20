@@ -1,0 +1,35 @@
+# Source registry for the Data Center Infrastructure Monitoring Pipeline.
+#
+# Maps each raw telemetry file to the asset/location metadata it represents.
+# To onboard a new server or metric source, add an entry here -- no code
+# changes or redeploy required. The pipeline (see infra_monitoring_pipeline.ipynb
+# and orchestration/infra_monitoring_dag.py) loads this file at runtime.
+
+sources:
+  ec2_cpu_utilization.csv:
+    asset_id: EC2-WEB-04
+    metric_type: cpu_utilization_pct
+    site: AWS-us-east-1
+    rack: R14
+    instance_type: EC2
+
+  ec2_network_in.csv:
+    asset_id: EC2-API-11
+    metric_type: network_in_bytes
+    site: AWS-us-east-1
+    rack: R09
+    instance_type: EC2
+
+  ec2_disk_write_bytes.csv:
+    asset_id: EC2-DB-02
+    metric_type: disk_write_bytes
+    site: AWS-us-west-2
+    rack: R22
+    instance_type: EC2
+
+  rds_cpu_utilization.csv:
+    asset_id: RDS-PROD-01
+    metric_type: cpu_utilization_pct
+    site: AWS-us-east-1
+    rack: R14
+    instance_type: RDS
